@@ -1,0 +1,46 @@
+<div class="container" ng-style="{ width: config.cols * 32 + 'px' }">
+    <div class="row">
+        <div class="alert alert-success" role="alert" ng-show="state === 'win' && config.isStandard()">
+            <span style="font-size: x-large">You win! Submit your score:</span>
+
+            <form class="input-group">
+                <input type="text" class="form-control" placeholder="Username"
+                       ng-model="name" maxlength="30" required>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="submitScore()">Go!</button>
+                     <button class="btn btn-default" type="button" ng-click="clear()">Skip</button>
+                </span>
+            </form>
+        </div>
+
+        <div class="alert alert-success clickable" role="alert" ng-click="clear()"
+             ng-show="state === 'win' && !config.isStandard()">
+            <span style="font-size: x-large">You win! Click here to start over.</span>
+        </div>
+
+        <div class="alert alert-danger clickable" role="alert" ng-click="clear()" ng-show="state === 'lose'">
+            <span style="font-size: x-large">You lose! Click here to start over.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <table ng-if="rows">
+            <tr ng-repeat="row in rows">
+                <td ng-repeat="cell in row">
+                <span class="clickable" ng-click="click(cell, $event)" ng-right-click="rightClick(cell)">
+                    <tile cell="cell"></tile>
+                </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="alert alert-info">
+            <timer name="timer" autostart="false" interval="1000">
+                <span style="font-size: x-large">Play time: {{minutes}} minutes, {{seconds}} seconds.</span>
+            </timer>
+        </div>
+    </div>
+
+</div>

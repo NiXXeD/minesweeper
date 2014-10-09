@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="panel panel-default" style="width: 400px; margin-left: 15px">
+        <div class="row">
+            <div class="alert alert-warning clickable" role="alert" ng-click="config.reset()" ng-show="!config.isStandard()">
+                <span style="font-size: x-large">Configuration not standard, this will not be valid for high scores. Click here to reset.</span>
+            </div>
+        </div>
+        <div class="panel-heading">Configuration</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="rows">Rows: {{config.rows}}</label>
+                    <input type="range" id="rows" value="20" min="10" max="40" ng-change="onChange()"
+                           ng-model="config.rows">
+                </div>
+                <div class="form-group">
+                    <label for="cols">Columns: {{config.cols}}</label>
+                    <input type="range" id="cols" value="20" min="10" max="40" ng-change="onChange()"
+                           ng-model="config.cols">
+                </div>
+                <div class="form-group">
+                    <label for="mines">Mines {{config.mines}}</label>
+                    <input type="range" id="mines" value="50" min="5" max="{{getMaxMines()}}" ng-change="onChange()"
+                           ng-model="config.mines">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

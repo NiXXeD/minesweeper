@@ -1,0 +1,28 @@
+<div class="container" style="width: 350px">
+    <div class="row" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>High scores</span>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-danger" ng-show="error">Error: {{error}}</div>
+                <table class="table" ng-show="scores">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Seconds</td>
+                            <td>Date</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="score in scores">
+                        <td>{{score.name}}</td>
+                        <td>{{score.time}}</td>
+                        <td>{{score.date | date:'short'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

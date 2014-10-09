@@ -1,0 +1,9 @@
+<svg width="32" height="32" style="display:block">
+    <rect width="32" height="32" fill="{{getBackColor()}}"></rect>
+    <text text-anchor="middle" x="16" y="16" fill="#AAAAAA"
+          font-weight="bold" font-size="12px"
+          dominant-baseline="central"
+          ng-show="!cell.covered && cell.count > 0 && !cell.mine">
+        {{cell.count}}
+    </text>
+</svg>

@@ -1,0 +1,12 @@
+/* fix the themed navbar missing some stuff */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+/* used for the grid items to make them look clicky */
+.clickable {
+    cursor: pointer;
+}
