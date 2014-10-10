@@ -1,26 +1,28 @@
 {
-  "name": "minesweeper",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./server/server.js"
-  },
-  "dependencies": {
-    "body-parser": "~1.8.1",
-    "compression": "^1.1.0",
-    "debug": "~2.0.0",
-    "express": "~4.9.0",
-    "monk": "^0.9.0",
-    "morgan": "~1.3.0"
-  },
-  "devDependencies": {
-    "del": "^0.1.3",
-    "gulp": "^3.8.8",
-    "gulp-clip-empty-files": "^0.1.1",
-    "gulp-concat": "^2.4.1",
-    "gulp-minify-css": "^0.3.10",
-    "gulp-ng-annotate": "^0.3.3",
-    "gulp-sourcemaps": "^1.2.2",
-    "gulp-uglify": "^1.0.1"
-  }
+    "name": "minesweeper",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./server/server.js",
+        "build": "npm install && gulp build",
+        "build-and-start": "npm run build && npm start"
+    },
+    "dependencies": {
+        "body-parser": "~1.8.1",
+        "compression": "^1.1.0",
+        "debug": "~2.0.0",
+        "express": "~4.9.0",
+        "monk": "^0.9.0",
+        "morgan": "~1.3.0"
+    },
+    "devDependencies": {
+        "del": "^0.1.3",
+        "gulp": "^3.8.8",
+        "gulp-clip-empty-files": "^0.1.1",
+        "gulp-concat": "^2.4.1",
+        "gulp-minify-css": "^0.3.10",
+        "gulp-ng-annotate": "^0.3.3",
+        "gulp-sourcemaps": "^1.2.2",
+        "gulp-uglify": "^1.0.1"
+    }
 }
