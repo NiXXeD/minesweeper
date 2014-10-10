@@ -13,7 +13,6 @@ var paths = {
         'client/vendor/js/bootstrap.js',
         'client/vendor/js/angular.js',
         'client/vendor/js/angular-route.js',
-        'client/vendor/js/angular-timer.min.js',
         'client/app.js',
         'client/**/*.js'],
     css: ['client/style.css',
