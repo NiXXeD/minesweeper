@@ -10,8 +10,7 @@ angular.module('minesweeper', ['ngRoute', 'timer'])
                 controller: 'gameCtrl'
             })
             .when('/config', {
-                templateUrl: 'config/config.html',
-                controller: 'configCtrl'
+                templateUrl: 'config/config.html'
             })
             .when('/scores', {
                 templateUrl: 'scores/scores.html',
