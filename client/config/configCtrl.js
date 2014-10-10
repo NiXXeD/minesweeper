@@ -6,25 +6,23 @@ angular.module('minesweeper')
                 mines: 35
             };
 
-        var config = {
+        $scope.config = {
             rows: defaultVals.rows,
             cols: defaultVals.cols,
             mines: defaultVals.mines
         };
 
-        config.isStandard = function() {
-            return (config.rows == defaultVals.rows &&
-                config.cols == defaultVals.cols &&
-                config.mines == defaultVals.mines);
+        $scope.config.isStandard = function() {
+            return (this.rows == defaultVals.rows &&
+                this.cols == defaultVals.cols &&
+                this.mines == defaultVals.mines);
         };
 
-        config.reset = function() {
-            config.rows = defaultVals.rows;
-            config.cols = defaultVals.cols;
-            config.mines = defaultVals.mines;
+        $scope.config.reset = function() {
+            this.rows = defaultVals.rows;
+            this.cols = defaultVals.cols;
+            this.mines = defaultVals.mines;
         };
-
-        $scope.config = config;
 
         $scope.onChange = function() {
             var max = $scope.getMaxMines();
