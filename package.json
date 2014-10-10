@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "node ./server/server.js",
-        "build": "npm install && gulp build",
+        "build": "npm install && gulp clean && gulp build",
         "build-and-start": "npm run build && npm start"
     },
     "dependencies": {
