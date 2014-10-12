@@ -61,6 +61,11 @@ gulp.task('watch', function() {
     gulp.watch(paths.css, ['minify-css']);
 });
 
+gulp.task('server', function() {
+    //start server
+    require('./server/server.js');
+});
+
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'html', 'minify-js', 'minify-css']);
+gulp.task('default', ['server', 'watch', 'html', 'minify-js', 'minify-css']);
 gulp.task('build', ['html', 'minify-js', 'minify-css']);

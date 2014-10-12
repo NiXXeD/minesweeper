@@ -3,9 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "node ./server/server.js",
-        "build": "npm install && gulp clean && gulp build",
-        "build-and-start": "npm run build && npm start"
+        "start": "npm install && gulp"
     },
     "dependencies": {
         "body-parser": "~1.8.1",
