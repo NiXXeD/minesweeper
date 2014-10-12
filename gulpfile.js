@@ -67,5 +67,6 @@ gulp.task('server', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['server', 'watch', 'html', 'minify-js', 'minify-css']);
+gulp.task('default', ['server', 'html', 'minify-js', 'minify-css']);
+gulp.task('debug', ['server', 'watch', 'html', 'minify-js', 'minify-css']);
 gulp.task('build', ['html', 'minify-js', 'minify-css']);
