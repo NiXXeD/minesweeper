@@ -74,11 +74,13 @@ angular.module('minesweeper')
 
                 if (centerCell.count == 0) {
                     forNearbyCells(centerCell, function(cell) {
-                        if (cell.covered && cell.count == 0) {
-                            cells.push(cell);
-                        }
+                        if (!cell.marked) {
+                            if (cell.covered && cell.count == 0) {
+                                cells.push(cell);
+                            }
 
-                        cell.covered = false;
+                            cell.covered = false;
+                        }
                     });
                 }
             }
