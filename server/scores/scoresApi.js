@@ -1,28 +1,17 @@
-var db = require('monk')('localhost/db');
-var scores = db.get('scores');
+var low = require('lowdb');
+var db = low('db.json');
+var scores = db('scores');
 var jsonParser = require('body-parser').json({});
 
 module.exports = function(app) {
     app.get('/api/scores', function(req, res) {
-        scores.find({}, { sort: { time: 1 } })
-            .success(function(data) {
-                res.json(data);
-            })
-            .error(function(err) {
-                res.writeHead(500);
-                res.end(err.message);
-            });
+        var val = scores.sortBy('time').value();
+        res.json(val);
     });
 
     app.post('/api/scores', jsonParser, function(req, res) {
-        scores.insert(req.body)
-            .success(function() {
-                res.writeHead(200);
-                res.end();
-            })
-            .error(function(err) {
-                res.writeHead(500);
-                res.end(err.message);
-            })
+        scores.push(req.body);
+        res.writeHead(200);
+        res.end();
     });
 };
