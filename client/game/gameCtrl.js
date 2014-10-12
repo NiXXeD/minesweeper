@@ -43,11 +43,22 @@ angular.module('minesweeper')
                 if (clickedCell.covered) {
                     clickedCell.marked = !clickedCell.marked;
                 } else {
+                    //check if it's a 'safe' move first
+                    var nearbyMarked = 0;
                     forNearbyCells(clickedCell, function(cell) {
-                        if (!cell.marked && cell.covered) {
-                            uncoverCell(cell);
+                        if (cell.marked) {
+                            nearbyMarked++;
                         }
                     });
+
+                    if (nearbyMarked == clickedCell.count) {
+                        //open the cells
+                        forNearbyCells(clickedCell, function(cell) {
+                            if (!cell.marked && cell.covered) {
+                                uncoverCell(cell);
+                            }
+                        });
+                    }
                 }
 
                 checkWin();
