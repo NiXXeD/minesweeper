@@ -9,10 +9,11 @@ var ngAnnotate = require('gulp-ng-annotate');
 
 var paths = {
     js: [
-        'client/vendor/js/jquery-1.11.1.js',
-        'client/vendor/js/bootstrap.js',
-        'client/vendor/js/angular.js',
-        'client/vendor/js/angular-route.js',
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+        'node_modules/angular/angular.js',
+        'node_modules/angular-route/angular-route.js',
+        'vendor/js/angular-timer.js',
         'client/app.js',
         'client/**/*.js'],
     css: ['client/style.css',
